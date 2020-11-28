@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link rel="icon" href="img/logoDW170.jpg" type="image/png" />
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- BARRA DE NAVEGACIÓN -->
+  <nav class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between col-xl-6 col-lg-7">
+      <a class="py-2 d-none d-md-inline-block" href="home.html">INICIO</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">CATEGORÍAS</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">PRODUCTOS</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">VENDER</a>
+      <a class="py-2 d-none d-md-inline-block" href="contacto.html">CONTACTO</a>
+      <!-- Barra de Perfil -->
+      <a class="nav-link dropdown-toggle" id="usuario" href="" data-toggle="dropdown"></a>
+      <div class="dropdown-menu" id="menuperfil">
+        <a class="dropdown-item" id="carrito" href="cart.html">
+          <badge class="badge badge-pill badge-danger" id="count"></badge> Ver mi carrito
+        </a>
+        <a class="dropdown-item" id="perfil" href="my-profile.html">Mi perfil</a>
+        <button class="dropdown-item active" onclick="loginOut()">Cerrar
+          sesión</button>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main role="main">
+    <section>
+      <img type="button" onclick="window.open('home.html', '_self')" src="img/cover_back.png" class="img-fluid"
+        alt="Responsive image">
+      <img type="button" class="img-fluid" alt="Responsive image" src="img/promo2.jpg"
+        onclick="window.open('home.html', '_self')">
+    </section>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <h3 class="text-center m-3"><b>Categorías</b></h3>
+        <div class="row">
+          <div class="row justify-content-center h-100">
+            <div class="col-md-4">
+              <a href="category-info.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/cat1.jpg">
+                <h3 class="text-center m-3">Autos</h3>
+                <div class="card-body">
+                  <p class="card-text">Los mejores precios en autos 0 kilómetro, de alta y media gama.</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="category-info.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/cat7.jpg">
+                <h3 class="text-center m-3">Electrodomésticos</h3>
+                <div class="card-body">
+                  <p class="card-text">Todos los electrodomésticos modernos y de bajo consumo.</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="category-info.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/cat3.jpg">
+                <h3 class="text-center m-3">Muebles</h3>
+                <div class="card-body">
+                  <p class="card-text">Muebles antiguos, nuevos y para ser armados por uno mismo.</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="category-info.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/cat8.jpg">
+                <h3 class="text-center m-3">Deporte</h3>
+                <div class="card-body">
+                  <p class="card-text">Toda la variedad de indumentaria para todo tipo de deporte.</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="category-info.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/cat5.jpg">
+                <h3 class="text-center m-3">Computadoras</h3>
+                <div class="card-body">
+                  <p class="card-text">Todo en cuanto a computadoras, para uso de oficina y/o juegos.</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="category-info.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/cat6.jpg">
+                <h3 class="text-center m-3">Vestimenta</h3>
+                <div class="card-body">
+                  <p class="card-text">Gran variedad de ropa, nueva y de segunda mano.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <a type="button" class="btn btn-light btn-lg btn-block" href="categories.html">Ver todas las categorías</a>
+        </div>
+      </div>
+    </div>
+    <div class="album py-5 bg-light content-center">
+      <div class="container">
+        <h3 class="text-center m-3"><b>Productos Destacados</b></h3>
+        <div class="row">
+          <div class="row justify-content-center h-100">
+            <div class="col-md-3">
+              <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/destac1.jpg">
+                <h3 class="text-center m-3">CALZADO</h3>
+                <div class="card-body">
+                  <p class="card-text text-center">Talle 37 al 40 - $2100</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/destac3.jpg">
+                <h3 class="text-center m-3">VESTIDO</h3>
+                <div class="card-body">
+                  <p class="card-text text-center">Talle XL - $1200</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top" src="img/destac2.jpg">
+                <h3 class="text-center m-3">TOP SPORT</h3>
+                <div class="card-body">
+                  <p class="card-text text-center">Talle M - $400.00</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="album py-5 bg-light content-center">
+          <div class="container">
+            <h3 class="text-center m-3"><b>Productos Nuevos</b></h3>
+            <div class="row">
+              <div class="row justify-content-center h-100">
+                <div class="col-md-3">
+                  <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                    <img class="bd-placeholder-img card-img-top" src="img/cat9.jpg">
+                    <h3 class="text-center m-3">CELULAR</h3>
+                    <div class="card-body">
+                      <p class="card-text text-center">Iphone 11 Pro U$D 1199</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-3">
+                  <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                    <img class="bd-placeholder-img card-img-top" src="img/cat1.jpg">
+                    <h3 class="text-center m-3">AUTO ROJO</h3>
+                    <div class="card-body">
+                      <p class="card-text text-center">Chevrolet U$D 52.000</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-3">
+                  <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                    <img class="bd-placeholder-img card-img-top" src="img/destac2.jpg">
+                    <h3 class="text-center m-3">TOP SPORT</h3>
+                    <div class="card-body">
+                      <p class="card-text text-center">Talle M - $400.00</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-3">
+                  <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                    <img class="bd-placeholder-img card-img-top" src="img/destac3.jpg">
+                    <h3 class="text-center m-3">VESTIDO</h3>
+                    <div class="card-body">
+                      <p class="card-text text-center">Talle XL - $1200</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver todos los productos</a>
+        </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-muted" style="background-color: #e1d3bc;">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="home.html">aquí</a> para ir al inicio.</p>
+    </div>
+  </footer>
+
+  <!-- script -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    var usuario = localStorage.getItem('usuario');
+    document.getElementById('usuario').innerHTML = usuario;
+  </script>
+</body>
+
+</html>

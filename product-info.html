@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link rel="icon" href="img/logoDW170.jpg" type="image/png" />
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <style>
+    .puntuacion {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    .puntuacion input {
+      position: absolute;
+      top: -100px;
+    }
+
+
+    .puntuacion label {
+      float: right;
+      color: orange;
+      font-size: 30px;
+    }
+
+    .puntuacion label:hover,
+    .puntuacion label:hover~label,
+    .puntuacion input:checked~label {
+      color: #d61c6c;
+    }
+
+    span {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-weight: 400;
+      color: orange;
+      ;
+    }
+
+    .btn {
+      background: #d61c6c;
+      border-radius: 0%;
+      color: #ffffff;
+      margin-top: 15px;
+    }
+
+    .btn:hover {
+      box-shadow: 0px 0px 9px rgb(0, 0, 0, .35);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- BARRA DE NAVEGACIÓN -->
+  <nav class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between col-xl-6 col-lg-7">
+      <a class="py-2 d-none d-md-inline-block" href="home.html">INICIO</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">CATEGORÍAS</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">PRODUCTOS</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">VENDER</a>
+      <a class="py-2 d-none d-md-inline-block" href="contacto.html">CONTACTO</a>
+      <!-- Barra de Perfil -->
+      <a class="nav-link dropdown-toggle" id="usuario" href="" data-toggle="dropdown"></a>
+      <div class="dropdown-menu" id="menuperfil">
+        <a class="dropdown-item" id="carrito" href="cart.html">Ver mi carrito</a>
+        <a class="dropdown-item" id="perfil" href="my-profile.html">Mi perfil</a>
+        <button class="dropdown-item active" onclick="loginOut()">Cerrar
+          sesión</button>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción del producto.</h2>
+        <p class="lead">Encontrarás aquí toda la información del producto.</p>
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
+          seleccionado previamente, siempre se visualizará el presente: <strong>Chevrolet Onix Joy</strong>.</p>
+      </div>
+      <h3 id="categoryName"></h3>
+      <hr class="my-3">
+     
+      <!-- Imágenes ilustrativas en carrusel con indicadores -->
+      <dt></dt>
+      <dd>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+              <div class="row justify-content-center" style="width: 600px;">
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                    <li data-target="#carousel" data-slide-to="3"></li>
+                    <li data-target="#carousel" data-slide-to="4"></li>
+                  </ol>
+                  <div class="carousel-inner" id="carousel-img"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dd>
+      <br>
+      <dl>
+        <dt>Precio</dt>
+        <dd>
+          <p id="cost"></p>
+        </dd>
+
+        <dt>Descripción</dt>
+        <dd>
+          <p id="categoryDescription"></p>
+        </dd>
+
+        <dt>Categoría</dt>
+        <dd>
+          <p id="category"></p>
+        </dd>
+
+        <dt>Cantidad de vendidos</dt>
+        <dd>
+          <p id="soldCount"></p>
+        </dd>
+        <!-- Imágenes de productos relacionados js -->
+        <dt>Productos relacionados</dt>
+        <dd>
+          <div>
+            <hr class="my-3">
+            <div class="row text-center text-lg-left pt-2" id="relatedProducts">
+            </div>
+        </dd>
+        </dd>
+        <!-- Casilla de nuevo comentario y puntuación -->
+        <dt>COMENTARIOS</dt>
+        <dd>
+          <hr class="my-3">
+          <div class="row comentarios justify-content-center">
+            <div class="puntuacion">
+              <input id="radio1" type="radio" name="estrellas" value="5"
+                onclick="document.getElementById('valor').innerHTML='★5'">
+              <label for="radio1">★</label>
+              <input id="radio2" type="radio" name="estrellas" value="4"
+                onclick="document.getElementById('valor').innerHTML='★4'">
+              <label for="radio2">★</label>
+              <input id="radio3" type="radio" name="estrellas" value="3"
+                onclick="document.getElementById('valor').innerHTML='★3'">
+              <label for="radio3">★</label>
+              <input id="radio4" type="radio" name="estrellas" value="2"
+                onclick="document.getElementById('valor').innerHTML='★2'">
+              <label for="radio4">★</label>
+              <input id="radio5" type="radio" name="estrellas" value="1"
+                onclick="document.getElementById('valor').innerHTML='★1'">
+              <label for="radio5">★</label><br>
+            </div>
+          </div><br>
+          <div class="container">
+            <div class="row comentarios justify-content-center">
+              <div class="col-7">
+                <form action="" class="form comentarios d-flex justify-content-end flex-wrap">
+                  <textarea name="comentarios" placeholder="Escribe aquí tu comentario..." rows="6"
+                    cols="90"></textarea>
+                  <button class="btn" type="button">PUBLICAR</button><br>
+                </form>
+              </div>
+            </div>
+            <!-- Comentarios y puntuación visibles de json -->
+            <p id="listcomments"></p>
+            <hr class="my-3">
+          </div>
+        </dd>
+        </dd>
+      </dl>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-muted" style="background-color: #e1d3bc;">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="home.html">aquí</a> para ir al inicio.</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/product-info.js"></script>
+  <script src="js/login.js"></script>
+  <script>
+    var usuario = localStorage.getItem('usuario');
+    document.getElementById('usuario').innerHTML = usuario;
+  </script>
+</body>
+
+</html>

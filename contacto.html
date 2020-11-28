@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link rel="icon" href="img/logoDW170.jpg" type="image/png" />
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <style>
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- BARRA DE NAVEGACIÓN -->
+  <nav class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between col-xl-6 col-lg-7">
+      <a class="py-2 d-none d-md-inline-block" href="home.html">INICIO</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">CATEGORÍAS</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">PRODUCTOS</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">VENDER</a>
+      <a class="py-2 d-none d-md-inline-block" href="contacto.html">CONTACTO</a>
+      <!-- Barra de Perfil -->
+      <a class="nav-link dropdown-toggle" id="usuario" href="" data-toggle="dropdown"></a>
+      <div class="dropdown-menu" id="menuperfil">
+        <a class="dropdown-item" id="carrito" href="cart.html">Ver mi carrito</a>
+        <a class="dropdown-item" id="perfil" href="my-profile.html">Mi perfil</a>
+        <button class="dropdown-item active" onclick="loginOut()">Cerrar
+          sesión</button>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main role="main">
+    <div class="album py-5 bg-light content-center" id="cajon1">
+      <div class="row justify-content-center h-100">
+        <div class="container">
+          <h3 class="text-center m-3"><b>Sobre Nosotros:</b></h3>
+          <p class="justify-content-between"><b>Somos una empresa Uruguaya que comercializa via internet desde 2020,
+              gracias al
+              impulso por buscar la excelencia en
+              nuestros productos llegamos a lugrares donde las demás empresas no llegan: tu hogar.</b>
+          </p>
+          <br>
+          <div class="left">
+            <p>Informacion de Contacto</p>
+            <ul>
+              <li>
+                <h6><i class="fa fa-map-marker"></i> Direccion</h6>
+                <p>Montevideo, Uruguay</p>
+                <a type="button" class="btn" style="background-color: grey;"
+                  href="https://www.google.com/maps/dir//-34.9011127,-56.1645314/@-34.821098,-56.236439,14z?hl=es-419">Cómo
+                  llegar</a>
+              </li>
+              <li>
+                <h6><i class="fa fa-phone"></i> Telefono</h6>
+                <p><span> +598 098 283 276</span>
+              </li>
+              <li>
+                <h6><i class="fa fa-headphones"></i> Consultas</h6>
+                <p>eMercado2020@gmail.com</p>
+              </li>
+            </ul>
+          </div>
+          <div class="right">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13094.855954580476!2d-56.182744925359316!3d-34.86341325575745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f80ffc63bf7d3%3A0x6b321b2e355bec99!2sMontevideo%2C%20Departamento%20de%20Montevideo!5e0!3m2!1ses-419!2suy!4v1606000623392!5m2!1ses-419!2suy"
+              width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+              tabindex="0">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+<!-- FOOTER -->
+<footer class="text-muted" style="background-color: #e1d3bc;">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Volver arriba</a>
+    </p>
+    <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+    <p>Clickea <a target="_blank" href="home.html">aquí</a> para ir al inicio.</p>
+  </div>
+</footer>
+
+  <!-- script -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/login.js"></script>
+  <script>
+    var usuario = localStorage.getItem('usuario');
+    document.getElementById('usuario').innerHTML = usuario;
+  </script>
+</body>
+
+</html>

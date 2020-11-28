@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link rel="icon" href="img/logoDW170.jpg" type="image/png" />
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- BARRA DE NAVEGACIÓN -->
+  <nav class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between col-xl-6 col-lg-7">
+      <a class="py-2 d-none d-md-inline-block" href="home.html">INICIO</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">CATEGORÍAS</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">PRODUCTOS</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">VENDER</a>
+      <a class="py-2 d-none d-md-inline-block" href="contacto.html">CONTACTO</a>
+      <!-- Barra de Perfil -->
+      <a class="nav-link dropdown-toggle" id="usuario" href="" data-toggle="dropdown"></a>
+      <div class="dropdown-menu" id="menuperfil">
+        <a class="dropdown-item" id="carrito" href="cart.html">
+          <badge class="badge badge-pill badge-danger" id="count"></badge> Ver mi carrito
+        </a>
+        <a class="dropdown-item" id="perfil" href="my-profile.html">Mi perfil</a>
+        <button class="dropdown-item active" onclick="loginOut()">Cerrar
+          sesión</button>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <!-- Carrito de deseo -->
+  <main role="main">
+    <div class="container p-4">
+      <div class="card-block">
+        <div class="text-center p-4">
+          <h2>CARRITO DE DESEOS</h2>
+          <p class="lead">Verás aquí todos los productos seleccionados.</p>
+        </div>
+        <div class="cart-grid-body col-xs-12 col-lg-12">
+            <div class="card cart-container">
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Artículo</th>
+                    <th scope="col"></th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio unitario</th>
+                    <th scope="col">SUBTOTAL</th>
+                  </tr>
+                </thead>
+                <tbody id="lista"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="checkout cart-detailed-actions card-block">
+        <div class="text-sm-center">
+          <input class="btn btn-primary" type="button" value="ACTUALIZAR"
+            onclick="operaciones('multiplicar'); return false;" />
+        </div>
+      </div>
+      <br>
+      <br>
+    </div>
+    <div class="container">
+      <div id="productCountInput">
+        <form class="needs-validation" id="sell-info">
+          <div class="row justify-content-md-center">
+            <div class="col-md-8 order-md-1">
+              <!-- Validación-->
+              <div class="row">
+                <div class="col-md-7 mb-3">
+                  <label for="state">Departamento</label>
+                  <select class="custom-select d-block w-100" id="productCategory">
+                    <option value="">Elija un departamento...</option>
+                    <option>Artigas</option>
+                    <option>Canelones</option>
+                    <option>Cerro Largo</option>
+                    <option>Colonia</option>
+                    <option>Durazno</option>
+                    <option>Flores</option>
+                    <option>Florida</option>
+                    <option>Lavalleja</option>
+                    <option>Maldonado</option>
+                    <option>Montevideo</option>
+                    <option>Paysandú</option>
+                    <option>Río Negro</option>
+                    <option>Rivera</option>
+                    <option>Rocha</option>
+                    <option>Salto</option>
+                    <option>San José</option>
+                    <option>Soriano</option>
+                    <option>Tacuarembó</option>
+                    <option>Treinta y tres</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Por favor ingresa su localización.
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="productName">Dirección</label>
+                  <input type="text" class="form-control" id="productName" placeholder="" value="">
+                  <div class="invalid-feedback">
+                    Ingresa una dirección.
+                  </div>
+                </div>
+              </div>
+              <hr class="mb-4">
+              <h5 class="mb-3">Formas de envío</h5>
+              <div class="d-block my-3">
+                <div class="custom-control custom-radio">
+                  <input id="goldradio" name="envioType" type="radio" class="custom-control-input" checked=""
+                    required="">
+                  <label class="custom-control-label" for="goldradio">Premium de 2 a 5 días (15%).</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="premiumradio" name="envioType" type="radio" class="custom-control-input" required="">
+                  <label class="custom-control-label" for="premiumradio">Express 5 a 8 días (7%).</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="standardradio" name="envioType" type="radio" class="custom-control-input" required="">
+                  <label class="custom-control-label" for="standardradio">Standard 12 a 15 días (5%).</label>
+                </div>
+                <div class="row">
+                  <button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#modalpago">Elige tu
+                    forma de pago</button>
+                </div>
+              </div>
+              <!-- Costos -->
+              <hr class="mb-4">
+              <h4 class="mb-3">Costos</h4>
+              <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div>
+                    <h6 class="my-0">Precio</h6>
+                    <small class="text-muted">Subtotal de su compra.</small>
+                  </div>
+                  <span class="text-muted" id="productCostText">-</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div>
+                    <h6 class="my-0">P0rcentaje</h6>
+                    <small class="text-muted">Según el tipo de envío.</small>
+                  </div>
+                  <span class="text-muted" id="comissionText">-</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Total ($)</span>
+                  <strong id="totalCostText">-</strong>
+                </li>
+              </ul>
+                <hr class="mb-4">
+
+                <!-- Boton de compra -->
+                <div class="checkout cart-detailed-actions card-block">
+                  <div class="text-sm-center">
+                    <button class="btn btn-primary btn-lg" type="submit">COMPRAR</button>
+                  </div>
+                </div>
+                <br>
+        </form>
+      </div>
+    </div>
+    </div>
+
+
+
+
+    <div class="row"><div class="text-center p-4">
+      <label for="zip">Introduzca número $ de su compra</label>
+      <input type="number" class="form-control" id="productCostInput" placeholder="" required="" value="300f">
+      <div class="invalid-feedback">
+        El costo debe ser mayor que 0.
+      </div>
+    </div>
+
+    <!-- Mensaje de compra realizada -->
+    <div class="alert fade" role="alert" id="alertResult">
+      <span id="resultSpan"></span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </main>
+
+  <footer class="text-muted" style="background-color: #e1d3bc;">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="home.html">aquí</a> para ir al inicio.</p>
+    </div>
+  </footer>
+
+  <!--MODAL-->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modalpago">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+            </div>
+            <div>
+              <label for="payment-method" class="d-flex justify-content-start">Método de pago:</label>
+              <div>
+                <label class="radio-inline"><input type="radio" name="payment-method" checked value="t/credito">
+                  <span>Tarjeta de crédito</span></label><br>
+                <label class="radio-inline"><input type="radio" name="payment-method" value="t/bancaria">
+                  <span>Transferencia bancaria</span></label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="spinner-wrapper">
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/dropzone.js"></script>
+      <script src="js/init.js"></script>
+      <script src="js/cart.js"></script>
+      <script src="js/login.js"></script>
+      <script>
+        var usuario = localStorage.getItem('usuario');
+        document.getElementById('usuario').innerHTML = usuario;
+      </script>
+</body>
+
+</html>
